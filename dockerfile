@@ -6,6 +6,8 @@ LABEL maintainer="akrck02@gmail.com"
 LABEL version="0.1"
 LABEL description="This is a custom Docker Image for mewbot execution"
 
+RUN mkdir -p /home/app/mewbot
+
 # Create app directory
 WORKDIR /home/app
 
@@ -16,4 +18,5 @@ RUN apt-get update && apt-get install -y git
 WORKDIR /home/app/mewbot
 
 # Clone the mewbot repository
+COPY start.sh /home/app/mewbot/start.sh
 CMD ["sh","start.sh"]
