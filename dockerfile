@@ -9,6 +9,11 @@ LABEL description="This is a custom Docker Image for mewbot execution"
 # Create app directory
 WORKDIR /home/app
 
-# Copy start.sh script and define default command for the container
-COPY ./start.sh /home/app/start.sh
-CMD ["sh","/home/app/start.sh"]
+# install git
+RUN apt-get update && apt-get install -y git
+
+# Create app directory
+WORKDIR /home/app/mewbot
+
+# Clone the mewbot repository
+CMD ["sh","start.sh"]

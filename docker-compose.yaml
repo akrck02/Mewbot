@@ -1,6 +1,7 @@
 version: '3.1'
 services:
-  app:
-    image: mewbot:latest
-    volumes:
-    - .:/home/app #Binding entire directory
+  mewbot:
+    container_name: Mewbot
+    image: akrck02/mewbot:latest
+    environment:
+      Token : ""

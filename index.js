@@ -1,4 +1,4 @@
-require('dotenv').config();
+//require('dotenv').config();
 console.log(process.env['token']);
 
 const { ShardingManager } = require('discord.js');
